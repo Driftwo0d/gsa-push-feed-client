@@ -1,19 +1,3 @@
-#!/usr/bin/env python3
-#
-# Copyright 2006 Google, Inc.
-# All Rights Reserved.
-#
-
-#
-# A helper script that pushes an xml file to the feeder.
-# This example provides a simple feed function.
-#
-# This example is written in Python.
-# Code blocks are determined by indentation.
-# See www.python.org for more information.
-# Inspired by : http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/146306
-#
-
 import getopt
 import requests
 import sys
@@ -61,7 +45,7 @@ def main(argv):
         if opt == "--xmlfilename":
             xmlfilename = arg
 
-    if (url and xmlfilename and datasource and feedtype in ("full", "incremental", "metadata-and-url")):
+    if url and xmlfilename and datasource and feedtype in ("full", "incremental", "metadata-and-url"):
 
         data = {"feedtype": feedtype, "datasource": datasource}
         files = {"data": open(xmlfilename, "rb")}
